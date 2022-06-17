@@ -47,8 +47,12 @@ function App() {
 
     const database = getDatabase(firebase);
     const dbRef = ref(database);
-
-    push(dbRef, userInput);
+    
+    if(userInput) {
+      push(dbRef, userInput);
+    } else {
+      alert('Please enter note')
+    }
 
     setUserInput('');
   }
@@ -67,6 +71,7 @@ function App() {
       <Form
         handleInputChange={handleInputChange}
         handleSubmit={handleSubmit}
+        value={userInput}
       />
       {
         <div className="wrapper">

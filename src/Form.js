@@ -14,7 +14,8 @@ const Form = (props) => {
                         name="newNote"
                         id="newNote"
                         placeholder="insert note here...."
-                        onChange={props.handleInputChange}>
+                        onChange={props.handleInputChange}
+                        value={props.value}>
                     </textarea>
                     <button className="post" onClick={props.handleSubmit} >add note 📌</button>
                 </form>

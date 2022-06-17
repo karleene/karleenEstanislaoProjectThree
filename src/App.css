@@ -144,6 +144,7 @@ footer {
 footer p {
   margin: 7px 0;
   color: white;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -161,6 +162,26 @@ footer a {
 @media (max-width: 768px) {}
 
 /* Landscape phones and down */
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 5rem;
+  }
+
+  .post {
+    font-size: 0.8rem;
+    padding: 10px 15px;
+  }
+
+  textarea {
+    padding: 15px 0 50px 15px;
+    margin: -4rem 30px;
+  }
+
+  footer p {
+    font-size: 0.7rem;
+  }
+}
+
+
 
 /* media queries ends here */
