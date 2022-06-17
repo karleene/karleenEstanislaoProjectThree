@@ -5,6 +5,7 @@ import Header from './Header';
 import Form from './Form';
 import Footer from './Footer';
 import { useState, useEffect } from 'react';
+// import DateTime from './DateTime';
 
 
 function App() {
@@ -41,6 +42,25 @@ function App() {
     setUserInput(event.target.value)
   }
 
+  // // A function to fix how the minutes append to the page
+  // let minutes = function () {
+  //   if (date.getMinutes() < 10) {
+  //     return (minutes = "0" + date.getMinutes());
+  //   } else {
+  //     return (minutes = date.getMinutes());
+  //   }
+  // };
+
+  // // Date object
+  // const date = new Date();
+
+  // const noteDateVar = () => {
+  //   return(
+  //     setNoteDate(() => { { date.getMonth() + 1 } { date.getDate() } { date.getFullYear() } })
+  //   )
+  // }
+
+
   // Create a handleSubmit function that will push data to firebase, and to our userInput
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -54,7 +74,9 @@ function App() {
       alert('Please enter a note')
     }
 
-    window.scrollBy({ top: 1000, behavior: "smooth" })
+    window.scrollBy({ top: 500, behavior: "smooth" })
+
+    // setNoteDate(noteDate);
 
     setUserInput('');
   }
@@ -80,11 +102,10 @@ function App() {
           <section className="noteSection">
             <ul className="listOfNotes">
               {
-                notes.map((singleNote) => {
+                notes.slice(0).reverse().map((singleNote) => {
                   return (
                     <li key={singleNote.key}>
-                      <p>{singleNote.name}</p>
-                      <button className="delete" onClick={() => { handleRemove(singleNote.key) }}>delete 🗑️</button>
+                      <p>{singleNote.name}<button className="delete" onClick={() => { handleRemove(singleNote.key) }}>❌</button></p>
                     </li>
                   )
                 })

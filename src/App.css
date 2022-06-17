@@ -64,8 +64,7 @@ textarea {
   height: 50%;
   padding: 15px 0 100px 15px;
   margin: -4rem 50px;
-  background-color: lightpink;
-  border-radius: 20px;
+  background-color: paleturquoise;
 }
 
 
@@ -110,23 +109,28 @@ li {
   height: 100%;
   padding: 50px 15px;
   font-size: 0.8rem;
-
+  position: relative;
 }
 
 /* button effect starts here */
 /* credit: https: //codepen.io/derekmorash/pen/XddZJY */
 .delete {
-  border-color: lightcoral;
+  display: none;
+  border-color: peachpuff;
   border-radius: 10px;
-  color: black;
+  border: none;
+  color: peachpuff;
   font-size: 0.8rem;
   padding: 5px 8px;
-  box-shadow: 0 0 40px 40px lightcoral inset, 0 0 0 0 lightcoral;
+  box-shadow: 0 0 40px 40px peachpuff inset, 0 0 0 0 peachpuff;
   transition: all 150ms ease-in-out;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .delete:hover {
-  box-shadow: 0 0 10px 0 lightcoral inset, 0 0 10px 4px lightcoral;
+  box-shadow: 0 0 10px 0 peachpuff inset, 0 0 10px 4px peachpuff;
 }
 
 /* noteSection styling ends here */
@@ -135,10 +139,11 @@ li {
 /* footerSection styling starts here */
 footer {
   background-color: gray;
-  position: fixed;
+  padding: 1px 0;
+  /* position: fixed;
   left: 0;
   bottom: 0;
-  right: 0;
+  right: 0; */
 }
 
 footer p {
@@ -181,7 +186,5 @@ footer a {
     font-size: 0.7rem;
   }
 }
-
-
 
 /* media queries ends here */
