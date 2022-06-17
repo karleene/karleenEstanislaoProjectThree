@@ -74,7 +74,7 @@ function App() {
       alert('Please enter a note')
     }
 
-    window.scrollBy({ top: 500, behavior: "smooth" })
+    // window.scrollBy({ top: 500, behavior: "smooth" })
 
     // setNoteDate(noteDate);
 
