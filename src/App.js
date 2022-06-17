@@ -1,15 +1,21 @@
 import './App.css';
 import firebase from './firebase';
 import { getDatabase, ref, onValue, push, remove } from 'firebase/database'
-// import axios from 'axios';
+import axios from 'axios';
 import Header from './Header';
+import Quote from './Quote';
 import Form from './Form';
+import Notes from './Notes';
 import Footer from './Footer';
 import { useState, useEffect } from 'react';
 // import DateTime from './DateTime';
 
 
 function App() {
+
+  // useState to keep track of the 'quote of the day' and author
+  const [ quote, setQuote ] = useState('');
+  const [ author, setAuthor ] = useState('');
 
   // useState to keep track of the notes added / deleted
   const [notes, setNotes] = useState([]);
@@ -18,7 +24,7 @@ function App() {
   const [userInput, setUserInput] = useState('');
 
   // useState to keep track of date changes
-  const [noteDate, setNoteDate] = useState(null);
+  // const [noteDate, setNoteDate] = useState(null);
 
   // On initial render / component mount, useEffect to implement onValue to keep track of changes.And push those values in an array
   useEffect(() => {
@@ -42,27 +48,36 @@ function App() {
     })
   }, [userInput]);
 
-  // useEffect( () => {
-  //     axios({
-  //       baseURL: 'http://worldtimeapi.org/api/ip',
-  //       method: 'GET',
-  //       dataResponse: 'json',
-  //       // params: {
-  //       //   api_key: 'dd5b39d470b74bf6ac72adcd4c90770c'
-  //       // }
-  //     }).then ( (apiData) => {
-  //       // console.log(apiData.data.datetime);
-  //       setNoteDate(apiData.data.datetime);
-  //     })
-  // }, [])
+  useEffect( () => {
+      axios({
+        url: 'https://morning-coast-00478.herokuapp.com/https://zenquotes.io?api=quotes',
+        method: 'GET',
+        dataResponse: 'json',
+      }).then ( (apiData) => {
+        setQuote(apiData.data[0].q);
+        setAuthor(apiData.data[0].a); 
+      })
+  }, [])
 
   // Create a handleInputChange function that will update our setUserInput
   const handleInputChange = (event) => {
     setUserInput(event.target.value)
   }
 
-  const current = new Date();
-  const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()} ${current.getHours()}:${current.getMinutes()}`;
+  // Date object
+  let current = new Date();
+
+  // A function to fix how the minutes append to the page
+  let minutes = function () {
+    if (current.getMinutes() < 10) {
+      return (minutes = "0" + current.getMinutes());
+    } else {
+      return (minutes = current.getMinutes());
+    }
+  };
+
+  // Date variable
+  const date = `${current.getDate()}-${current.getMonth() + 1}-${current.getFullYear()} ${current.getHours()}:${minutes()}`;
 
   // Create a handleSubmit function that will push data to firebase, and to our userInput
   const handleSubmit = (event) => {
@@ -76,17 +91,16 @@ function App() {
         'message': userInput, 
         'date': date,
       }
-
       push(dbRef, note);
     } else {
       alert('Please enter a note')
     }
 
-    window.scrollBy({ top: 200, behavior: "smooth" })
+    // window.scrollBy({ top: 200, behavior: "smooth" })
 
     setUserInput('');
 
-    setNoteDate(noteDate)
+    // setNoteDate(noteDate)
   }
 
   // Create a handleRemove function that will remove data from firebase
@@ -100,28 +114,19 @@ function App() {
   return (
     <div className="app">
       <Header />
+      <Quote 
+      quote={quote}
+      author={author}
+      />
       <Form
         handleInputChange={handleInputChange}
         handleSubmit={handleSubmit}
         value={userInput}
       />
-      {
-        <div className="wrapper">
-          <section className="noteSection">
-            <ul className="listOfNotes">
-              {
-                notes.slice(0).reverse().map((singleNote) => {
-                  return (
-                    <li key={singleNote.key}>
-                      <p>{singleNote.date}<br></br>{singleNote.name}<button className="delete" onClick={() => { handleRemove(singleNote.key) }}>❌</button></p>
-                    </li>
-                  )
-                })
-              }
-            </ul>
-          </section>
-        </div>
-      }
+      <Notes 
+      notes={notes}
+      handleRemove={handleRemove}
+      />
       <Footer />
     </div>
   );
@@ -130,3 +135,4 @@ function App() {
 export default App;
 
 // Error handle if can't connect to firebase
+

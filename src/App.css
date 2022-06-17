@@ -52,6 +52,29 @@ h1 {
 
 /* h1 animation ends here */
 
+/* quoteSection styling starts here */
+.quoteSection {
+  background-color: floralwhite;
+  margin: -3rem 0 100px 0 ;
+  width: 100%;
+  padding: 10px 15px;
+  /* credit: https: //getcssscan.com/css-box-shadow-examples */
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+
+.quoteSection h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.quoteSection p {
+  font-style: italic;
+  text-align: center;
+}
+/* quoteSection styling ends here */
+
+
 /* formSection styling starts here */
 .form {
   display: flex;
@@ -64,6 +87,7 @@ textarea {
   height: 50%;
   padding: 15px 0 100px 15px;
   margin: -4rem 50px;
+  border-radius: 15px;
   background-color: paleturquoise;
 }
 
@@ -72,7 +96,7 @@ textarea {
 /* credit: https: //codepen.io/derekmorash/pen/XddZJY */
 .post {
   border-color: lightcoral;
-  border-radius: 20px;
+  border-radius: 15px;
   color: black;
   font-size: 1.5rem;
   padding: 15px 20px;
@@ -164,7 +188,13 @@ footer a {
 @media (max-width: 940px) {}
 
 /* Landscape phone to portrait tablet */
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+
+.noteSection p {
+    width: 250px;
+  }
+
+}
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
@@ -177,14 +207,20 @@ footer a {
     padding: 10px 15px;
   }
 
-.listOfNotes {
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
   textarea {
     padding: 15px 0 50px 15px;
     margin: -4rem 30px;
+  }
+
+  .listOfNotes {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  li {
+    margin: 0;
   }
 
   footer p {
@@ -193,3 +229,4 @@ footer a {
 }
 
 /* media queries ends here */
+
