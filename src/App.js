@@ -59,11 +59,6 @@ function App() {
       })
   }, [])
 
-  // Create a handleInputChange function that will update our setUserInput
-  const handleInputChange = (event) => {
-    setUserInput(event.target.value)
-  }
-
   // Date object
   let current = new Date();
 
@@ -78,6 +73,11 @@ function App() {
 
   // Date variable
   const date = `${current.getDate()}-${current.getMonth() + 1}-${current.getFullYear()} ${current.getHours()}:${minutes()}`;
+  
+  // Create a handleInputChange function that will update our setUserInput
+  const handleInputChange = (event) => {
+    setUserInput(event.target.value)
+  }
 
   // Create a handleSubmit function that will push data to firebase, and to our userInput
   const handleSubmit = (event) => {

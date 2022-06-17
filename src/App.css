@@ -53,6 +53,8 @@ h1 {
 /* h1 animation ends here */
 
 /* quoteSection styling starts here */
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+
 .quoteSection {
   background-color: floralwhite;
   margin: -3rem 0 100px 0 ;
@@ -63,14 +65,15 @@ h1 {
 }
 
 .quoteSection h2 {
-  font-size: 1rem;
-  text-transform: uppercase;
+  font-size: 1.5rem;
   text-align: center;
+  font-family: 'Berkshire Swash', cursive;
 }
 
 .quoteSection p {
   font-style: italic;
   text-align: center;
+  font-size: 1.2rem;
 }
 /* quoteSection styling ends here */
 
@@ -114,6 +117,9 @@ textarea {
 
 /* noteSection styling starts here */
 
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+
+
 .listOfNotes {
   display: flex;
   flex-wrap: wrap;
@@ -127,12 +133,13 @@ li {
 }
 
 .noteSection p {
+  font-family: 'Gloria Hallelujah', cursive;
   background-color: peachpuff;
   color: #000;
   width: 300px;
   height: 100%;
   padding: 50px 15px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   position: relative;
 }
 
