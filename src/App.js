@@ -51,8 +51,10 @@ function App() {
     if(userInput) {
       push(dbRef, userInput);
     } else {
-      alert('Please enter note')
+      alert('Please enter a note')
     }
+
+    window.scrollBy({ top: 1000, behavior: "smooth" })
 
     setUserInput('');
   }
