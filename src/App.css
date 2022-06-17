@@ -178,7 +178,7 @@ footer a {
   }
 
 .listOfNotes {
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
