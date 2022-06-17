@@ -1,38 +1,166 @@
-.App {
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+html {
+  font-size: 125%;
+}
+
+.wrapper {
+  width: 85%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* h1 animation starts here */
+/* credit: https: //codepen.io/aJukebox/pen/eYNgLoJ  */
+
+@import url('https://fonts.googleapis.com/css?family=Codystar:300&display=swap');
+
+body {
+  /* display: flex;
+    justify-content: center;
+    align-items: center; */
+  background: black;
+  background-image: url('data:image/svg+xml,%3Csvg width="42" height="44" viewBox="0 0 42 44" xmlns="http://www.w3.org/2000/svg"%3E%3Cg id="Page-1" fill="none" fill-rule="evenodd"%3E%3Cg id="brick-wall" fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 7rem;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Codystar';
+  -webkit-animation: glow 2s ease-in-out infinite alternate;
+  -moz-animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    color: #fff;
+    text-shadow: 0 0 10px #00fff2, 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 90px #00fff2;
+  }
+
+  to {
+    color: gray;
+    text-shadow: 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 80px #00fff2, 0 1 90px #00fff2;
+  }
+}
+
+/* h1 animation ends here */
+
+/* formSection styling starts here */
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+textarea {
+  width: 50%;
+  height: 50%;
+  padding: 15px 0 100px 15px;
+  margin: -4rem 50px;
+  background-color: lightpink;
+  border-radius: 20px;
+}
+
+
+/* button effect starts here */
+/* credit: https: //codepen.io/derekmorash/pen/XddZJY */
+.post {
+  border-color: lightcoral;
+  border-radius: 20px;
+  color: black;
+  font-size: 1.5rem;
+  padding: 15px 20px;
+  box-shadow: 0 0 40px 40px lightcoral inset, 0 0 0 0 lightcoral;
+  transition: all 150ms ease-in-out;
+}
+
+.post:hover {
+  box-shadow: 0 0 10px 0 lightcoral inset, 0 0 10px 4px lightcoral;
+}
+
+/*button effect ends here  */
+
+/* formSection styling ends here */
+
+/* noteSection styling starts here */
+
+.listOfNotes {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 75px;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+}
+
+.noteSection p {
+  background-color: peachpuff;
+  color: #000;
+  width: 100%;
+  height: 100%;
+  padding: 50px 15px;
+  font-size: 0.8rem;
+
+}
+
+/* button effect starts here */
+/* credit: https: //codepen.io/derekmorash/pen/XddZJY */
+.delete {
+  border-color: lightcoral;
+  border-radius: 10px;
+  color: black;
+  font-size: 0.8rem;
+  padding: 5px 8px;
+  box-shadow: 0 0 40px 40px lightcoral inset, 0 0 0 0 lightcoral;
+  transition: all 150ms ease-in-out;
+}
+
+.delete:hover {
+  box-shadow: 0 0 10px 0 lightcoral inset, 0 0 10px 4px lightcoral;
+}
+
+/* noteSection styling ends here */
+
+
+/* footerSection styling starts here */
+footer {
+  background-color: gray;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+footer p {
+  margin: 7px 0;
+  color: white;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+footer a {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
+/* footerSection styling starts here */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* media queries starts here */
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {}
+
+/* media queries ends here */
