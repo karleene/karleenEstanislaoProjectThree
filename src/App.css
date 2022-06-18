@@ -13,12 +13,14 @@ html {
   max-width: 1080px;
   margin: 0 auto;
 }
+/* google fonts */
+@import url('https://fonts.googleapis.com/css?family=Codystar:300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+/* google fonts end here */
 
 /* h1 animation starts here */
 /* credit: https: //codepen.io/aJukebox/pen/eYNgLoJ  */
-
-@import url('https://fonts.googleapis.com/css?family=Codystar:300&display=swap');
-
 body {
   /* display: flex;
     justify-content: center;
@@ -49,12 +51,9 @@ h1 {
     text-shadow: 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 80px #00fff2, 0 1 90px #00fff2;
   }
 }
-
 /* h1 animation ends here */
 
 /* quoteSection styling starts here */
-@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
-
 .quoteSection {
   background-color: floralwhite;
   margin: -3rem 0 100px 0 ;
@@ -77,7 +76,6 @@ h1 {
 }
 /* quoteSection styling ends here */
 
-
 /* formSection styling starts here */
 .form {
   display: flex;
@@ -86,6 +84,7 @@ h1 {
 }
 
 textarea {
+  font-family: 'Gloria Hallelujah', cursive;
   width: 50%;
   height: 50%;
   padding: 15px 0 100px 15px;
@@ -94,10 +93,10 @@ textarea {
   background-color: paleturquoise;
 }
 
-
 /* button effect starts here */
 /* credit: https: //codepen.io/derekmorash/pen/XddZJY */
 .post {
+  font-family: 'Gloria Hallelujah', cursive;
   border-color: lightcoral;
   border-radius: 15px;
   color: black;
@@ -110,16 +109,10 @@ textarea {
 .post:hover {
   box-shadow: 0 0 10px 0 lightcoral inset, 0 0 10px 4px lightcoral;
 }
-
 /*button effect ends here  */
-
 /* formSection styling ends here */
 
 /* noteSection styling starts here */
-
-@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
-
-
 .listOfNotes {
   display: flex;
   flex-wrap: wrap;
@@ -163,9 +156,7 @@ li {
 .delete:hover {
   box-shadow: 0 0 10px 0 peachpuff inset, 0 0 10px 4px peachpuff;
 }
-
 /* noteSection styling ends here */
-
 
 /* footerSection styling starts here */
 footer {
@@ -187,12 +178,30 @@ footer p {
 footer a {
   color: white;
 }
-
 /* footerSection styling starts here */
 
 /* media queries starts here */
 /* Portrait tablet and small desktops */
-@media (max-width: 940px) {}
+@media (max-width: 940px) {
+  .form {
+      flex-direction: column;
+      
+    }
+
+  textarea {
+    width: 75%;
+    height: 75%;
+    margin: -2rem 0 20px;
+  }
+
+  .noteSection p {
+    width: 325px;
+  }
+
+  .listOfNotes {
+    margin-top: 20px;
+  }
+}
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
@@ -200,6 +209,11 @@ footer a {
 .noteSection p {
     width: 250px;
   }
+
+textarea {
+  padding: 15px 0 100px 15px;
+  margin: -2rem 0 40px;
+}
 
 }
 
@@ -215,25 +229,29 @@ footer a {
   }
 
   textarea {
-    padding: 15px 0 50px 15px;
-    margin: -4rem 30px;
-  }
+    padding: 15px 0 75px 15px;
+    margin: -2rem 0 20px;
+    }
 
   .listOfNotes {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-top: 30px;
   }
 
   li {
     margin: 0;
   }
 
+  .noteSection p {
+    width: 325px;
+  }
+
   footer p {
     font-size: 0.7rem;
   }
 }
-
 /* media queries ends here */
 

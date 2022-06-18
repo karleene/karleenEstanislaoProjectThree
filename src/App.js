@@ -26,6 +26,18 @@ function App() {
   // useState to keep track of date changes
   // const [noteDate, setNoteDate] = useState(null);
 
+  // on initial render/ component mount, useEffect to fetch the api for a random quote of the day to show on the page
+  useEffect(() => {
+    axios({
+      url: 'https://morning-coast-00478.herokuapp.com/https://zenquotes.io?api=quotes',
+      method: 'GET',
+      dataResponse: 'json',
+    }).then((apiData) => {
+      setQuote(apiData.data[0].q);
+      setAuthor(apiData.data[0].a);
+    })
+  }, [])  
+
   // On initial render / component mount, useEffect to implement onValue to keep track of changes.And push those values in an array
   useEffect(() => {
     const database = getDatabase(firebase);
@@ -47,17 +59,6 @@ function App() {
       setNotes(newState)
     })
   }, [userInput]);
-
-  useEffect( () => {
-      axios({
-        url: 'https://morning-coast-00478.herokuapp.com/https://zenquotes.io?api=quotes',
-        method: 'GET',
-        dataResponse: 'json',
-      }).then ( (apiData) => {
-        setQuote(apiData.data[0].q);
-        setAuthor(apiData.data[0].a); 
-      })
-  }, [])
 
   // Date object
   let current = new Date();
