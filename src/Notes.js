@@ -8,7 +8,17 @@ const Notes = (props) => {
                         props.notes.slice(0).reverse().map((singleNote) => {
                             return (
                                 <li key={singleNote.key}>
-                                    <p>{singleNote.date}<br></br>{singleNote.name}<button className="delete" onClick={() => { props.handleRemove(singleNote.key) }}>❌</button></p>
+                                    <p>
+                                        {singleNote.date}
+                                        <br></br>
+                                        {singleNote.name}
+                                        <br></br>
+                                        {singleNote.qotdQ}
+                                        <br></br>
+                                        {singleNote.qotdA}
+                                    <button className="delete" onClick={() => { props.handleRemove(singleNote.key) }}>❌</button>
+
+                                    </p>
                                 </li>
                             )
                         })

@@ -8,14 +8,15 @@ import Form from './Form';
 import Notes from './Notes';
 import Footer from './Footer';
 import { useState, useEffect } from 'react';
-// import DateTime from './DateTime';
-
 
 function App() {
 
   // useState to keep track of the 'quote of the day' and author
   const [ quote, setQuote ] = useState('');
   const [ author, setAuthor ] = useState('');
+
+  // useState to keep track of quote of the day that's saved
+  const [quoteOfTheDay, setQuoteOfTheDay] = useState('');
 
   // useState to keep track of the notes added / deleted
   const [notes, setNotes] = useState([]);
@@ -48,7 +49,9 @@ function App() {
           {
             key: key,
             name: data[key].message,
-            date: data[key].date
+            date: data[key].date,
+            qotdQ: data[key].quote,
+            qotdA: data[key].author
           }
         )
       }
@@ -107,12 +110,28 @@ function App() {
     remove(dbRef);
   }
 
+  const handleSave = (event) => {
+    event.preventDefault();
+    const database = getDatabase(firebase);
+    const dbRef = ref(database);
+
+    const qotd = {
+      'quote': quote,
+      'author': author
+    }
+
+    setQuoteOfTheDay(qotd)
+
+    push(dbRef, qotd)    
+  }
+
   return (
     <div className="app">
       <Header />
       <Quote 
       quote={quote}
       author={author}
+      handleSave={handleSave}
       />
       <Form
         handleInputChange={handleInputChange}
@@ -122,6 +141,7 @@ function App() {
       <Notes 
       notes={notes}
       handleRemove={handleRemove}
+      qotd={quoteOfTheDay}
       />
       <Footer />
     </div>
