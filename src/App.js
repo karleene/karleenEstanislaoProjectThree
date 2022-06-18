@@ -23,9 +23,6 @@ function App() {
   // useState to keep track of what the user inputs
   const [userInput, setUserInput] = useState('');
 
-  // useState to keep track of date changes
-  // const [noteDate, setNoteDate] = useState(null);
-
   // on initial render/ component mount, useEffect to fetch the api for a random quote of the day to show on the page
   useEffect(() => {
     axios({
@@ -97,11 +94,9 @@ function App() {
       alert('Please enter a note')
     }
 
-    // window.scrollBy({ top: 200, behavior: "smooth" })
+    window.scrollBy({ top: 200, behavior: "smooth" })
 
     setUserInput('');
-
-    // setNoteDate(noteDate)
   }
 
   // Create a handleRemove function that will remove data from firebase
@@ -134,6 +129,4 @@ function App() {
 }
 
 export default App;
-
-// Error handle if can't connect to firebase
 
