@@ -11,9 +11,8 @@ const Notes = (props) => {
                                     <p>
                                         {singleNote.date}
                                         <br></br>
-                                        {singleNote.name}
+                                        {singleNote.name} {singleNote.qotdQ}
                                         <br></br>
-                                        {singleNote.qotdQ}
                                         <br></br>
                                         {singleNote.qotdA}
                                     <button className="delete" onClick={() => { props.handleRemove(singleNote.key) }}>❌</button>

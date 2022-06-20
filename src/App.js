@@ -16,7 +16,7 @@ function App() {
   const [ author, setAuthor ] = useState('');
 
   // useState to keep track of quote of the day that's saved
-  const [quoteOfTheDay, setQuoteOfTheDay] = useState('');
+  const [quoteOfTheDay, setQuoteOfTheDay] = useState({});
 
   // useState to keep track of the notes added / deleted
   const [notes, setNotes] = useState([]);
@@ -36,7 +36,7 @@ function App() {
     })
   }, [])  
 
-  // On initial render / component mount, useEffect to implement onValue to keep track of changes.And push those values in an array
+  // useEffect to implement onValue to keep track of changes, and push those values in an array
   useEffect(() => {
     const database = getDatabase(firebase);
     const dbRef = ref(database);
@@ -110,6 +110,7 @@ function App() {
     remove(dbRef);
   }
 
+  // Create a handleSave function that will save the quote currently showing on the page as another note
   const handleSave = (event) => {
     event.preventDefault();
     const database = getDatabase(firebase);
@@ -117,12 +118,15 @@ function App() {
 
     const qotd = {
       'quote': quote,
-      'author': author
+      'author': author,
+      'date': date
     }
 
     setQuoteOfTheDay(qotd)
 
     push(dbRef, qotd)    
+
+    window.scrollBy({ top: 200, behavior: "smooth" })
   }
 
   return (
