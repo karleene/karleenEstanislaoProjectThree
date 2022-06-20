@@ -1,3 +1,6 @@
+// Return the random quote of the day from API and show on the page
+// use props to handleSave when they click the "save" button
+
 const Quote = (props) => {
     return (
         <div className="wrapper">

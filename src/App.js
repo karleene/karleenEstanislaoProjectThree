@@ -15,7 +15,7 @@ function App() {
   const [ quote, setQuote ] = useState('');
   const [ author, setAuthor ] = useState('');
 
-  // useState to keep track of quote of the day that's saved
+  // useState to keep track of 'quote of the day' that's saved
   const [quoteOfTheDay, setQuoteOfTheDay] = useState({});
 
   // useState to keep track of the notes added / deleted

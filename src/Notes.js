@@ -1,3 +1,4 @@
+// Map thru the notes and return them as list items 
 
 const Notes = (props) => {
     return (

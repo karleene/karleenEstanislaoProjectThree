@@ -1,7 +1,7 @@
 
 // Return a form element where a user can enter their notes
-// Add a post - it button
-// Use props to handleSubmit when they click the post - it button
+// Add a 'add note' button
+// Use props to handleSubmit when they click the 'add note' button
 // Use props to handleInputChange as the user enter their notes
 
 const Form = (props) => {
