@@ -15,7 +15,7 @@ function App() {
   const [ quote, setQuote ] = useState('');
   const [ author, setAuthor ] = useState('');
 
-  // useState to keep track of 'quote of the day' that's saved
+  // useState to keep track of 'quote of the day' that's saved/pinned by user
   const [quoteOfTheDay, setQuoteOfTheDay] = useState({});
 
   // useState to keep track of the notes added / deleted
@@ -80,7 +80,7 @@ function App() {
     setUserInput(event.target.value)
   }
 
-  // Create a handleSubmit function that will push data to firebase, and to our userInput
+  // Create a handleSubmit function that will push data to firebase, and to our userInput/save notes to the page
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -102,7 +102,7 @@ function App() {
     setUserInput('');
   }
 
-  // Create a handleRemove function that will remove data from firebase
+  // Create a handleRemove function that will remove data from firebase/delete note from the page
   const handleRemove = (noteId) => {
     const database = getDatabase(firebase);
     const dbRef = ref(database, `/${noteId}`);

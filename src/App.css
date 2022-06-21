@@ -20,8 +20,10 @@ html {
 @import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
 /* google fonts end here */
 
+/* h1 animation credit: https: //codepen.io/aJukebox/pen/eYNgLoJ  */ 
+/* buttons hover effect credit: https: //codepen.io/derekmorash/pen/XddZJY */
+
 /* h1 animation starts here */
-/* credit: https: //codepen.io/aJukebox/pen/eYNgLoJ  */
 body {
   background: black;
   background-image: url('data:image/svg+xml,%3Csvg width="42" height="44" viewBox="0 0 42 44" xmlns="http://www.w3.org/2000/svg"%3E%3Cg id="Page-1" fill="none" fill-rule="evenodd"%3E%3Cg id="brick-wall" fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
@@ -111,12 +113,9 @@ textarea {
   padding: 15px 0 100px 15px;
   margin: -4rem 50px;
   border-radius: 15px;
-  /* background-color: paleturquoise; */
   background-image: linear-gradient(paleturquoise, cyan, lightcyan);
 }
 
-/* button effect starts here */
-/* credit: https: //codepen.io/derekmorash/pen/XddZJY */
 .post {
   font-family: 'Gloria Hallelujah', cursive;
   border-color: lightcoral;
@@ -132,7 +131,6 @@ textarea {
   box-shadow: 0 0 10px 0 lightcoral inset, 0 0 10px 4px lightcoral;
   cursor: pointer;
 }
-/*button effect ends here  */
 /* formSection styling ends here */
 
 /* noteSection styling starts here */
@@ -159,8 +157,6 @@ li {
   position: relative;
 }
 
-/* button effect starts here */
-/* credit: https: //codepen.io/derekmorash/pen/XddZJY */
 .delete {
   /* display: none; */
   border-color: peachpuff;
@@ -203,7 +199,7 @@ footer a {
 footer a:hover {
   color: peachpuff;
 }
-/* footerSection styling starts here */
+/* footerSection styling ends here */
 
 /* media queries starts here */
 /* Portrait tablet and small desktops */
