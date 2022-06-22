@@ -6,7 +6,6 @@
 
 const Form = (props) => {
     return (
-        <div className="wrapper">
             <section className="formSection">
                 <form action="submit" className="form" >
                     <label htmlFor="newNote"></label>
@@ -20,7 +19,6 @@ const Form = (props) => {
                     <button className="post" onClick={props.handleSubmit} >add note 📌</button>
                 </form>
             </section>
-        </div>
     )
 }
 
