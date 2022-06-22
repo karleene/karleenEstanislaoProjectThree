@@ -225,6 +225,19 @@ footer a:hover {
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
+  h1 {
+      font-size: 4rem;
+      margin-bottom: 80px;
+    }
+
+  .quoteSection h2 {
+    font-size: 1.2rem;
+  }
+
+  .quoteSection p {
+    font-size: 1rem;
+  }
+
   .noteSection p {
       width: 250px;
     }
@@ -237,9 +250,6 @@ footer a:hover {
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
-  h1 {
-    font-size: 5rem;
-  }
 
   .post {
     font-size: 0.8rem;
