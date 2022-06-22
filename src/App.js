@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 
 function App() {
 
-  // useState to keep track of the 'quote of the day' and author
+  // useState to keep track of the 'quote of the day' and author that's currently showing on the page
   const [ quote, setQuote ] = useState('');
   const [ author, setAuthor ] = useState('');
 
@@ -80,7 +80,7 @@ function App() {
     setUserInput(event.target.value)
   }
 
-  // Create a handleSubmit function that will push data to firebase, and to our userInput/save notes to the page
+  // Create a handleSubmit function that will push data to firebase, and to our userInput (save notes to the page)
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -97,12 +97,12 @@ function App() {
       alert('Please enter a note')
     }
 
-    window.scrollBy({ top: 200, behavior: "smooth" })
+    window.scrollBy({ top: 220, behavior: "smooth" })
 
     setUserInput('');
   }
 
-  // Create a handleRemove function that will remove data from firebase/delete note from the page
+  // Create a handleRemove function that will remove data from firebase (delete note from the page)
   const handleRemove = (noteId) => {
     const database = getDatabase(firebase);
     const dbRef = ref(database, `/${noteId}`);
@@ -126,27 +126,29 @@ function App() {
 
     push(dbRef, qotd)    
 
-    window.scrollBy({ top: 200, behavior: "smooth" })
+    window.scrollBy({ top: 220, behavior: "smooth" })
   }
 
   return (
     <div className="app">
-      <Header />
-      <Quote 
-      quote={quote}
-      author={author}
-      handleSave={handleSave}
-      />
-      <Form
-        handleInputChange={handleInputChange}
-        handleSubmit={handleSubmit}
-        value={userInput}
-      />
-      <Notes 
-      notes={notes}
-      handleRemove={handleRemove}
-      qotd={quoteOfTheDay}
-      />
+      <div className="wrapper">
+        <Header />
+        <Quote 
+        quote={quote}
+        author={author}
+        handleSave={handleSave}
+        />
+        <Form
+          handleInputChange={handleInputChange}
+          handleSubmit={handleSubmit}
+          value={userInput}
+        />
+        <Notes 
+        notes={notes}
+        handleRemove={handleRemove}
+        qotd={quoteOfTheDay}
+        />
+      </div>
       <Footer />
     </div>
   );

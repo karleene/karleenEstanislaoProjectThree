@@ -2,7 +2,6 @@
 
 const Notes = (props) => {
     return (
-        <div className="wrapper" >
             <section className="noteSection">
                 <ul className="listOfNotes" aria-label="list of notes">
                     {
@@ -25,7 +24,6 @@ const Notes = (props) => {
                     }
                 </ul>
             </section>
-        </div>
     )
 }
 
