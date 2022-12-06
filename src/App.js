@@ -27,7 +27,8 @@ function App() {
   // on initial render/ component mount, useEffect to fetch the api for a random quote of the day to show on the page
   useEffect(() => {
     axios({
-      url: 'https://morning-coast-00478.herokuapp.com/https://zenquotes.io?api=quotes',
+      // url: 'https://morning-coast-00478.herokuapp.com/https://zenquotes.io?api=quotes',
+      url: 'https://proxy-ugwolsldnq-uc.a.run.app/https://zenquotes.io?api=quotes',
       method: 'GET',
       dataResponse: 'json',
     }).then((apiData) => {

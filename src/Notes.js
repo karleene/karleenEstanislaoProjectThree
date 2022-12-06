@@ -5,7 +5,7 @@ const Notes = (props) => {
             <section className="noteSection">
                 <ul className="listOfNotes" aria-label="list of notes">
                     {
-                        props.notes.slice(0).reverse().map((singleNote) => {
+                    props.notes.slice(0).reverse().map((singleNote) => {
                             return (
                                 <li key={singleNote.key}>
                                     <p>
