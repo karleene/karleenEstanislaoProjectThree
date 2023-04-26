@@ -28,7 +28,7 @@ function App() {
   useEffect(() => {
     axios({
       // url: 'https://morning-coast-00478.herokuapp.com/https://zenquotes.io?api=quotes',
-      url: 'https://proxy-ugwolsldnq-uc.a.run.app/https://zenquotes.io?api=quotes',
+      url: 'https://proxy.junocollege.com/https://zenquotes.io?api=quotes',
       method: 'GET',
       dataResponse: 'json',
     }).then((apiData) => {
